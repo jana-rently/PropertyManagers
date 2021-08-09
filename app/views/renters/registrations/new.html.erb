@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<style >
+		body{
+	margin:0;
+	color:#6a6f8c;
+	background:#808080;
+	font:600 16px/18px 'Open Sans',sans-serif;
+  background-color: ; 
+}
+.hr{
+	height:2px;
+	margin:60px 0 50px 0;
+	background:rgba(255,255,255,.2);
+}
+.foot-lnk{
+	text-align:center;
+}
+.right{
+   margin-left: 50px;
+   color:white;
+}
+.center{
+  text-align:center;
+  color:white;
+}
+.btnr{
+border: none;
+  background-color: ;
+  padding: 14px 28px;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+  color: white;
+  display: inline-block;
+  margin-left:12%;
+}
+
+	</style>
+</head>
+<body >
+
+<h1 class="heading"> Signup</h1>
+<%= render "renters/shared/error_messages", resource: resource %>
+<div class="login-wrap">
+
+	<div class="login-form">
+	<div class="sign-in-htm">
+		<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  			
+        	<br><br>
+          
+			<div class="group">
+					
+					<%= f.label :name ,class: "label"%>
+					
+				
+					<%= f.text_field :name, class: "input"%>
+				
+			
+      <br>
+			
+			
+				<%= f.label :address, class: "label"%>
+				
+ 				<%= f.text_area :address, class: "input"%>
+ 			
+			<br>
+				<%= f.label :contact, class: "label"%> 
+				
+				<%= f.text_field :contact, class: "input"%>
+			<br>
+  				<%= f.label :email , class: "label"%><br/>
+  				
+    			<%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input" %>
+<br>
+    			 <%= f.label :password, class: "label" %>    
+    		<% if @minimum_password_length %>
+    		<em>(<%= @minimum_password_length %> characters minimum)</em>
+    		<% end %><br />
+    		
+    		<%= f.password_field :password, autocomplete: "new-password", class: "input" %>
+  			 <br>
+    			
+    		 <%= f.label :password_confirmation ,class: "label"%><br />
+    		
+   			 <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "input" %>
+   			 </div>
+   		
+<hr><br>
+				<div class="foot-lnk">
+					<label for="tab-1">Already have an account?</label>
+				</div>
+			
+		 
+		
+	<div class="action">
+    	<%= f.submit "Signup", class: "btnr",data: { turbolinks: false } %>
+		
+<span class="right"> 
+    <%= link_to "Login", new_renter_session_path, class: "btnr"%></span>
+   </div>
+		<% end %>
+		
+
+<div class="center">
+<%= render "renters/shared/links" %>
+</div></div> </div></div>
+  
+ </label>
+
+
+</body>
+</html>

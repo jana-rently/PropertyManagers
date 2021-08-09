@@ -1,0 +1,94 @@
+<html>
+<head>
+
+<style >
+	
+body{
+	margin:0;
+	color:#6a6f8c;
+	background:#808080;
+	font:600 16px/18px 'Open Sans',sans-serif;
+  background-color: ; 
+}
+
+.btnr{
+border: none;
+  background-color: ;
+  padding: 14px 28px;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+  color: white;
+  display: inline-block;
+  margin-left:12%;
+}
+.center{
+  font-size:18px;
+}
+  .btn:hover {
+   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  }
+	</style>
+
+<body>
+
+<div class="login-wrap">
+
+	<div class="login-form"> <div class="sign-in-htm">
+	<br>
+<h1 class="heading">Editing property</h1>
+ <br>
+<%= form_for :property, url: property_path(@property), method: :patch do |f| %>
+  <% if @property.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@property.errors.count, "error") %> prohibited
+      this property from being saved:</h2>
+    <ul>
+    <% @property.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+  <div class="group">
+<p>
+    <%= f.label :name ,class:"label"%><br>
+    <%= f.text_field :name, class:"input" %>
+    </p>
+    
+  <p>
+    <%= f.label :address ,class:"label"%><br>
+    <%= f.text_field :address , class:"input"%>
+  </p>
+     
+  <p>
+    <%= f.label :city,class:"label"%><br>
+    <%= f.text_field :city, class:"input"%>
+  </p>
+     <div><span class="label" >Rent($)</span> <span class="labels">BEDROOMS</span></div>
+
+   <%= f.number_field :rent, class:"inputs"%> 
+    <%= f.text_field :bedrooms, class:"inputs1"%>
+  </p>
+
+  <p>
+    <%= f.label :description, class:"label"%><br>
+    <%= f.text_area :description, class:"input" %>
+  </p>
+ <p>
+  <p>
+<%= f.label :Addimages,class:"label"%>
+ <%= f.file_field :images, multiple: true ,class:"input"%>
+ </p>
+ <%= link_to "Delete images",delimage_path(@property),class:"label"%>
+ 
+ </p> 
+ 
+  <br>
+    <%= f.submit  "Save Changes" ,class:"btn"%>
+  
+
+<% end %>
+ 
+ 
+

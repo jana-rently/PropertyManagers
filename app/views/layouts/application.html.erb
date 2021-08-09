@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rentlyproject</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <style>
+  
+
+
+*,:after,:before{box-sizing:border-box}
+.clearfix:after,.clearfix:before{content:'';display:table}
+.clearfix:after{clear:both;display:block}
+a{color:inherit;text-decoration:none}
+
+		.login-wrap{
+		width:100%;
+		margin:auto;
+		max-width:450px;
+		min-height:670px;
+		position:relative;
+		background-color: #484848; 
+  		border-radius: 40px;
+		box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
+		}
+
+
+		.login-html .tab,
+		.login-form .group .label,
+		.login-form .group .button{
+			text-transform:uppercase;
+		}
+
+
+		.login-form{
+		min-height:345px;
+		position:relative;
+		perspective:1000px;
+		transform-style:preserve-3d;
+		}
+		.login-form .group{
+		margin-bottom:15px;
+		}
+	.group.label,
+	.group.button,
+	.group.input,
+	.input{
+	width:100%;
+	color:#fff;
+	display:block;
+  	border-radius:25px;
+		}
+
+
+		.labels{
+  margin-left:60%;
+  color:white;
+	font-size:12px;
+}
+.inputs{border:none;
+		padding:15px 0px;
+		border-radius:25px;
+		background:rgba(255,255,255,.1);
+    margin-left:0%;
+    width:40%;
+    color:#fff;
+    text-align:center;
+
+}
+.inputs1{border:none;
+		padding:15px 0px;
+		border-radius:25px;
+		background:rgba(255,255,255,.1);
+    margin-left:19%;
+    width:40%;
+    color:#fff;
+    text-align:center;
+
+}
+	.login-form .group .input,
+	.login-form .group .button{
+		border:none;
+		padding:15px 20px;
+		border-radius:25px;
+		background:rgba(255,255,255,.1);
+		}
+
+	.login-form .group .label{
+	color:white;
+	font-size:12px;
+	}
+	.login-form .group .button{
+	background:#1161ee;
+	}
+	.heading{
+		color:white;
+		font-size:100%;
+	}
+
+  .foot-lnk{
+	text-align:center;
+}
+		
+		body{
+		margin:0;
+		color:#6a6f8c;
+		background:white;
+		font:600 16px/18px 'Open Sans',sans-serif;
+  		
+		}
+		.center{
+		text-align: center;
+		color:#484848	;
+			}
+
+		*{
+		  box-sizing: border-box;
+		}
+
+	.box {
+ 	 float: left;
+  	width: 27.33%;
+  	padding: 30px;
+  	margin-left: 50px;
+	border-collapse: collapse;
+    background-color:#505050	; 
+   	border-radius: 40px;
+	box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
+    min-height: 650px;
+	margin-top:10px;
+		}
+
+	.clearfix::after {
+	  content: "";
+ 	 clear: both;
+ 	 display: table;
+		}
+	.border{
+    
+		border-width: 1px;border-style: inset; 
+		border-radius: 10px;color: black;
+		width:100%;color:#ccc;
+		display:block;border-radius:25px;
+  		border:none;padding: 8px 10px;
+		background:rgba(255,255,255,.1);	
+		text-align:center;
+			}
+	.rent{
+		float: left;
+		border-width: 1px;border-style: inset; 
+		border-radius: 10px;color: black;
+		width:20%;color:#ccc;
+		display:block;border-radius:25px;
+  		border:none;padding: 8px 10px;
+		background:rgba(255,255,255,.1);
+		text-align:center;	
+	}
+	.bedrooms{
+		float: left;
+		border-width: 1px;border-style: inset; 
+		border-radius: 10px;color: black;
+		width:20%;color:#ccc;
+		display:block;border-radius:25px;
+  		border:none;padding: 8px 10px;
+		background:rgba(255,255,255,.1);
+		text-align:center;
+		margin-left :55%;
+	}
+	.align{
+	margin-right: 1000px;
+		}
+	.btn {
+  		border: none;font-size: 13px;
+  		cursor: pointer;
+		background-color: #333333;
+ ;
+  		color: white;padding: 5px 10px;
+  		border-radius: 12px;
+  		display: inline-block;
+		  margin-left:49px;
+  		}
+
+	.btn1 {
+  		border: none;border-radius: 22px;
+  		font-size: 14px;cursor: pointer;
+  		color: white;display: inline-block;
+  		background-color:  #333333;
+    		}
+
+	.btnr {
+		
+ 	 	border: none;border-radius: 22px;
+  		font-size: 14px;display: inline-block;
+ 	 	background-color:   #333333;
+ 	 	margin-left:49px;color: white;
+  		cursor: pointer;
+  			}
+
+	.btn:hover, .btnr:hover, .btn1:hover {
+	  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+	}
+
+.btns{
+  border: none;
+  background-color: blue;
+  border-radius: 5px;
+  font-size: 13px;
+  padding: 4px 4px;
+  color:white;
+  cursor: pointer;
+  display: inline-block;
+}
+.truncate {
+  width: 250px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+ .btns:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color:black;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: maroon;
+}
+.header{
+  text-align:center;
+  font-size:30px;
+  color:blue;
+}
+.br{
+	border-radius:1em;
+}
+.propname{
+	color:white;
+	font-size:16px;
+	text-align:center;
+}
+.notice{
+	margin-left:90%;
+	color:green;
+	margin-top:-6%;
+	
+}
+
+.textd{
+	color:white;
+	
+}
+
+  </style>
+  
+  </head>
+
+  <body>
+   
+    <%= yield %>
+	
+    <p class="notice"><%= notice%></p>
+  <p class="alert"><%= alert%></p>
+  </body>
+ 
+</html>

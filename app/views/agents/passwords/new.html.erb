@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style >
+		body{
+	margin:0;
+	color:#6a6f8c;
+	background:#c8c8c8;
+	font:600 16px/18px 'Open Sans',sans-serif;
+  background-color: blue;
+
+  
+}
+.button{
+ background:#1161ee; 
+ border:none;
+	padding:15px 20px;
+	border-radius:25px;
+	background: blue;
+  color:white;
+  
+}
+
+.center{
+  text-align:center;
+  color:white;
+}
+
+	</style>
+</head>
+<body>
+<h1 text-align:center ,color:darkblue> Forgot your password?</h1>
+
+
+<div class="login-wrap">
+
+	<div class="login-form">
+	<div class="sign-in-htm">
+  <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+<div class="group">
+<br>
+ <%= render "agents/shared/error_messages", resource: resource %>
+<br>
+<br>
+  <div class="field">
+    <%= f.label :email ,class: "label"%><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" ,class: "input" %>
+  </div>
+<br>
+<br>
+  <div class="actions">
+    <%= f.submit "Send me reset password instructions" ,class: "button" %>
+  </div>
+<% end %>
+<br>
+<br>
+<div class="center">
+<%= render "agents/shared/links" %>
+</div>
+<body>
+</html>

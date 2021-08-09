@@ -1,0 +1,33 @@
+<%#homepage of the application %>
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+        <style>
+        .buy{
+                margin-top:25%;
+                color:black;
+        }
+        </style>
+</head>
+
+<body class="index">
+<ul>
+  <li style="margin-left:20%"><%= link_to 'Renter',new_renter_registration_path, class:"active"%></li>
+  <li style="margin-left:10%">Real Estate Property Application</li>
+  <li style="margin-left:10%">
+  <%if Agent.any?%><%= link_to 'Agent',new_agent_session_path %>
+  <% else %>
+  <%= link_to 'Agent',new_agent_registration_path %>
+  <%end%>
+  </li>
+  <li style="margin-left:13%"><%=link_to "Add company",new_agent_registration_path%></li>
+  </ul>
+
+
+<p class= buy> Why Buy?  Rent One..</p>
+<p class = buy1> save time <br>  save money</p>
+
+</body>
+</html>

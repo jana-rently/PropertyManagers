@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<style >
+	body{
+	margin:0;
+	color:#6a6f8c;
+	background:#c8c8c8;
+	font:600 16px/18px 'Open Sans',sans-serif;
+  background-color: #808080;
+}
+.right{
+   margin-left: 220px;
+   color:black;
+}
+
+.center{
+  text-align:center;
+  color:white;
+}
+.btnr{
+	 border: none;
+  background-color: ;
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-size: 16px;
+  cursor: pointer;
+  color: white;
+  margin-left:-7%;
+  display: inline-block;
+}
+
+
+	</style>
+</head>
+<body>
+<h1 class="heading"> login</h1>
+<%= render "renters/shared/error_messages", resource: resource %>
+<div class="login-wrap">
+
+	<div class="login-form">
+	<div class="sign-in-htm">
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="group">
+  <br>
+  <br>
+  
+    <%= f.label :email ,class: "label"%><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" ,class: "input"%>
+ 
+
+  <br><br>
+    <%= f.label :password ,class: "label"%><br />
+    <%= f.password_field :password, autocomplete: "current-password" ,class: "input"%>
+  
+<br>
+</div>
+  <% if devise_mapping.rememberable? %>
+ 
+      <%= f.check_box :remember_me %>
+      <%= f.label :remember_me ,class: "label"%>
+  
+  <% end %>
+
+  <div class="actions">
+  <span class="right"> 
+  
+    <%= f.submit "Log in" ,class: "btnr"%>
+	
+     </span>
+  </div>
+ 
+<% end %>
+<br><br>
+ <div class= "center">
+<%= render "renters/shared/links" %>
+</div>
+
+     </div>
+     </body>
+     </html>
+
+
+
+
+
+
+	

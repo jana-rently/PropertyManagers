@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.br{
+  margin-left:4%;
+}
+body{
+	margin:0;
+	color:#6a6f8c;
+	background:#808080;
+	font:600 16px/18px 'Open Sans',sans-serif;
+  background-color: ; 
+}
+.wt{
+  color:white;
+}
+</style>
+</head>
+<body>
+
+
+<div class="row">
+<div style="text-align:center; color:white;"> Edit/Delete your property images</div>
+<br><br>
+
+ <%(0...@property.images.count).each do |img| %>
+<%= image_tag(@property.thumbnail(img),class:"br")%>
+ <%= link_to 'Remove', delimageattachment_url(@property.images[img]),class:"wt" %>
+ <%end%>
+
+</div>
+
+</body>
+</html>

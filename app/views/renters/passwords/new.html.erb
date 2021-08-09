@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style >
+body{
+	margin:0;
+	color:#6a6f8c;
+	background:#808080;
+	font:600 16px/18px 'Open Sans',sans-serif;
+  background-color: ; 
+}
+
+.btnr{
+border: none;
+  background-color: ;
+  padding: 14px 28px;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+  color: white;
+  display: inline-block;
+  margin-left:12%;
+}
+.login-wrap{
+  min-height:450px;
+}
+
+.center{
+  text-align:center;
+  color:white;
+}
+
+	</style>
+</head>
+<body>
+<h1 class="heading"> Forgot your password?</h1>
+<br>
+<div class="login-wrap">
+
+	<div class="login-form">
+	<div class="sign-in-htm">
+  <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+<div class="group">
+<br>
+ <%= render "renters/shared/error_messages", resource: resource %>
+<br>
+<br>
+  <div class="field">
+    <%= f.label :email ,class: "label"%><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" ,class: "input" %>
+  </div>
+<br>
+<br>
+  <div class="actions">
+    <%= f.submit "Send me reset password instructions" ,class: "btnr" %>
+  </div>
+<% end %>
+<br>
+<br>
+<div class="center">
+<%= render "renters/shared/links" %>
+</div>
+<body>
+</html>

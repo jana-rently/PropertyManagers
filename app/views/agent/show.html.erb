@@ -1,0 +1,53 @@
+<% #Displaying all the properties added by the agent in agent account%>
+
+<!DOCTYPE html>
+<html>
+<head>
+	
+<style >
+
+</style>
+
+<ul>
+  <li><%= link_to "Addproperties", addprop_path(@agent) ,class:"active"%></li>
+   <li style="float:right"><%= link_to "logout", destroy_agent_session_path, method: :delete %></li>
+</ul>
+
+
+<br>
+<div class="center">Welcome <%=@agent.name%></div>
+<h2 class="center"> Your Properties</h1>
+
+	<div class="login-form"> <div class="sign-in-htm">
+	
+	<% @agent.properties.each do |prop|%>
+		<div class="clearfix">
+		<div class="box">
+		<button class="btn1"> <%=link_to "Edit" ,edit_property_path(prop)%> </button>
+ 		<button class="btn"><%=link_to "Applications", viewapproach_path(prop)%></button>
+
+		<button class="btnr" ><%= link_to 'Delete', property_path(prop),
+        	            method: :delete, data: { confirm: 'Are you sure?' } %> </button> 
+
+		<h2 class="propname"><%= prop.name%><br></h2>
+		
+
+	<%(0...prop.images.count+1 - prop.images.count).each do |img| %>
+   <a href=""> <%= image_tag(prop.thumbnail(img),class:"br") %></a>
+   <%end%>
+   <br><br>
+   		<span class="textd">Property Location :</span>
+		<span class="border"><%= prop.address %></span><br>
+		<div><span class="textd" >Rent($)</span> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;&ensp;<span class="textd">Bedrooms</span></div>
+		<div class="rent"><%= prop.rent%></div>
+
+		<div class="bedrooms"><%= prop.bedrooms%></div><br><br>
+		<span class="textd">City</span>
+		<div class="border"><%=prop.city%></div>
+		
+		<span class="textd" >About Property</span>
+
+		<span class="border"><%= prop.description%></span>
+			</div>
+		<div>
+		<% end %>
